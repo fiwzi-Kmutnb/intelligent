@@ -18,13 +18,11 @@ menu = {
     "Neural Network Model": "nn_image_analysis"
 }
 
-# ✅ ใช้ session_state เพื่อติดตามหน้าที่เลือก
 if "page" not in st.session_state:
-    st.session_state["page"] = list(menu.values())[0]  # หน้าแรกเป็น default
+    st.session_state["page"] = list(menu.values())[0]
 
 st.sidebar.write("### เลือกหน้า")
 
-# ✅ สร้างปุ่มให้เปลี่ยนหน้า
 for label, page in menu.items():
     if st.sidebar.button(label):
         st.session_state["page"] = page
